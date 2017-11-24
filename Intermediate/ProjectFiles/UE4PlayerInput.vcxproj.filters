@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<None Include="..\..\UE4PlayerInput.uproject" />
+		<Filter Include="Source">
+			<UniqueIdentifier>{E2AC4C74-7CC7-4972-92D3-FA9472E195F7}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Source\UE4PlayerInput.Target.cs">
+			<Filter>Source</Filter>
+		</None >
+		<None Include="..\..\Source\UE4PlayerInputEditor.Target.cs">
+			<Filter>Source</Filter>
+		</None >
+		<Filter Include="Config">
+			<UniqueIdentifier>{C53CEBE5-F35B-4FBB-B687-F8409B9FA686}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Config\DefaultEditor.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultEngine.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultGame.ini">
+			<Filter>Config</Filter>
+		</None >
+		<Filter Include="Source\UE4PlayerInput">
+			<UniqueIdentifier>{7CC43893-9E88-4D98-99EF-76B0D9D00881}</UniqueIdentifier>
+		</Filter>
+		<ClCompile Include="..\..\Source\UE4PlayerInput\MyPawn.cpp">
+			<Filter>Source\UE4PlayerInput</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\UE4PlayerInput\MyPawn.h">
+			<Filter>Source\UE4PlayerInput</Filter>
+		</ClInclude >
+		<None Include="..\..\Source\UE4PlayerInput\UE4PlayerInput.Build.cs">
+			<Filter>Source\UE4PlayerInput</Filter>
+		</None >
+		<ClCompile Include="..\..\Source\UE4PlayerInput\UE4PlayerInput.cpp">
+			<Filter>Source\UE4PlayerInput</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\UE4PlayerInput\UE4PlayerInput.h">
+			<Filter>Source\UE4PlayerInput</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\UE4PlayerInput\UE4PlayerInputGameModeBase.cpp">
+			<Filter>Source\UE4PlayerInput</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\UE4PlayerInput\UE4PlayerInputGameModeBase.h">
+			<Filter>Source\UE4PlayerInput</Filter>
+		</ClInclude >
+	</ItemGroup>
+</Project>
