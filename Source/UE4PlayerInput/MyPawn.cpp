@@ -53,8 +53,36 @@ void AMyPawn::Tick(float DeltaTime)
 
 	// Handle movement basd on our "MoveX" and "MoveY" axes
 	if (!CurrentVelocity.IsZero()) {
+
+		// set as moving
+		bMoving = true;
+
+		// check and update counter
+		if (bLastMoving) {
+			moveCounter++;
+			UE_LOG(LogTemp, Warning, TEXT("Movement counter is %d."), moveCounter);
+		}
+		
+		// check if time threshold for fast speed has been reached
+		if (moveCounter >= moveAfterFrames) {
+			bFast = true;
+		}
+		else {
+			bFast = false;
+		}
+
 		FVector NewLocation = GetActorLocation() + (CurrentVelocity * DeltaTime);
 		SetActorLocation(NewLocation);
+
+		// set last as moving
+		bLastMoving = true;
+	}
+	else {
+		bMoving = false;
+		bLastMoving = false;
+		bFast = false;
+		moveCounter = 0;
+
 	}
 }
 
@@ -75,14 +103,30 @@ void AMyPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 void AMyPawn::Move_XAxis(float AxisValue)
 {
+	float speed;
+	if (bFast) {
+		speed = 150.0f;
+	}
+	else {
+		speed = 50.0f;
+	}
+
 	// Move at 100 units per second forward or backward
-	CurrentVelocity.X = FMath::Clamp(AxisValue, -1.0f, 1.0f) * 100.0f;
+	CurrentVelocity.X = FMath::Clamp(AxisValue, -1.0f, 1.0f) * speed;
 }
 
 void AMyPawn::Move_YAxis(float AxisValue)
 {
+	float speed;
+	if (bFast) {
+		speed = 150.0f;
+	}
+	else {
+		speed = 50.0f;
+	}
+
 	// Move at 100 units per second right or left
-	CurrentVelocity.Y = FMath::Clamp(AxisValue, -1.0f, 1.0f) * 100.0f;
+	CurrentVelocity.Y = FMath::Clamp(AxisValue, -1.0f, 1.0f) * speed;
 }
 
 void AMyPawn::StartGrowing()

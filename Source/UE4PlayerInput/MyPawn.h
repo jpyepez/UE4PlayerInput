@@ -37,4 +37,13 @@ public:
 
 	FVector CurrentVelocity;
 	bool bGrowing;
+
+	// Speed variables
+	bool bMoving = false;
+	bool bFast = false;
+	bool bLastMoving = false;
+	int32 moveCounter = 0;
+
+	UPROPERTY(EditAnywhere)
+	int32 moveAfterFrames = 100;
 };
